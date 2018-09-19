@@ -7,5 +7,7 @@ namespace Livraria_Api.Models
 {
     public class Pedido
     {
+        public int Id { get; set; }
+        public List<Livro> Livros { get; set; }
     }
 }

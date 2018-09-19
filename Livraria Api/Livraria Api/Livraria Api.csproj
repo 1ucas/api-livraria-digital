@@ -103,10 +103,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Autor.cs" />
-    <Compile Include="Models\Comentario.cs" />
-    <Compile Include="Models\Livro.cs" />
-    <Compile Include="Models\Pedido.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -120,6 +116,17 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LivrariaApiModel\LivrariaApiModel.csproj">
+      <Project>{DE8553AC-84B6-498F-9D90-FBA01BB753AC}</Project>
+      <Name>LivrariaApiModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LivrariaApiRepo\LivrariaApiRepo.csproj">
+      <Project>{22D8D0C7-2611-4741-B4C6-974FF260EC0E}</Project>
+      <Name>LivrariaApiRepo</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

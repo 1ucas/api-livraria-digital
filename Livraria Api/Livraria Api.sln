@@ -5,6 +5,10 @@ VisualStudioVersion = 15.0.27130.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Livraria Api", "Livraria Api\Livraria Api.csproj", "{001BD5AC-35F3-4B2B-92EC-82A9D76D7353}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LivrariaApiRepo", "LivrariaApiRepo\LivrariaApiRepo.csproj", "{22D8D0C7-2611-4741-B4C6-974FF260EC0E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LivrariaApiModel", "LivrariaApiModel\LivrariaApiModel.csproj", "{DE8553AC-84B6-498F-9D90-FBA01BB753AC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{001BD5AC-35F3-4B2B-92EC-82A9D76D7353}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{001BD5AC-35F3-4B2B-92EC-82A9D76D7353}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{001BD5AC-35F3-4B2B-92EC-82A9D76D7353}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22D8D0C7-2611-4741-B4C6-974FF260EC0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22D8D0C7-2611-4741-B4C6-974FF260EC0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22D8D0C7-2611-4741-B4C6-974FF260EC0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22D8D0C7-2611-4741-B4C6-974FF260EC0E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE8553AC-84B6-498F-9D90-FBA01BB753AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE8553AC-84B6-498F-9D90-FBA01BB753AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE8553AC-84B6-498F-9D90-FBA01BB753AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE8553AC-84B6-498F-9D90-FBA01BB753AC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
