@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace Livraria_Api.Models
+namespace LivrariaApiModel.Dtos
 {
-    public class Comentario
+    public class ComentarioDto
     {
         public int Id { get; set; }
         public string Conteudo { get; set; }
-        public int IdUsuario { get; set; }
-        public int IdLivro { get; set; }
+        public int NomeUsuario { get; set; }
     }
 }

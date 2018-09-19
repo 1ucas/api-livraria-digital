@@ -1,4 +1,5 @@
 ﻿using Livraria_Api.Models;
+using LivrariaApiModel.Dtos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
