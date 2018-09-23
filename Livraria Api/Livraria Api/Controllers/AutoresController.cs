@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LivrariaApiModel.Dtos;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -10,24 +11,24 @@ namespace Livraria_Api.Controllers
     public class AutoresController : ApiController
     {
         // GET: api/Autores
-        public IEnumerable<string> Get()
+        public IEnumerable<AutorDto> Get()
         {
-            return new string[] { "value1", "value2" };
+            return new AutorDto[] { new AutorDto(), new AutorDto() };
         }
 
         // GET: api/Autores/5
-        public string Get(int id)
+        public AutorDto Get(int id)
         {
-            return "value";
+            return new AutorDto();
         }
 
         // POST: api/Autores
-        public void Post([FromBody]string value)
+        public void Post([FromBody]AutorDto autor)
         {
         }
 
         // PUT: api/Autores/5
-        public void Put(int id, [FromBody]string value)
+        public void Put(int id, [FromBody]AutorDto autor)
         {
         }
 

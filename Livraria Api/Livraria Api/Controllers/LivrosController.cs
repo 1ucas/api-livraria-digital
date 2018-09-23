@@ -1,36 +1,33 @@
-﻿using Livraria_Api.Models;
+﻿using LivrariaApiModel.Dtos;
 using LivrariaApiRepo;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
 
 namespace Livraria_Api.Controllers
 {
     public class LivrosController : ApiController
     {
-        // GET: api/Livros
-        public IEnumerable<Livro> Get()
+        // GET: api/Livros 
+        public IEnumerable<LivroDto> Get()
         {
-            return LivroRepositorio.Livros;
+            return LivroRepositorio.GerarDto(LivroRepositorio.Listar());
         }
 
         // GET: api/Livros/5
-        public Livro Get(int id)
+        public LivroDto Get(int id)
         {
-            return new Livro();
+            return new LivroDto();
         }
 
         // POST: api/Livros
-        public void Post([FromBody]Livro livro)
+        public void Post([FromBody]LivroDto livro)
         {
-            LivroRepositorio.Livros.Add(livro);
+            LivroRepositorio.InserirNovoItem(livro);
         }
 
         // PUT: api/Livros/5
-        public void Put(int id, [FromBody]Livro livro)
+        public void Put(int id, [FromBody]LivroDto livro)
         {
         }
 

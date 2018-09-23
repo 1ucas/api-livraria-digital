@@ -1,8 +1,7 @@
-﻿using System;
+﻿using LivrariaApiModel.Dtos;
+using LivrariaApiRepo;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
 
 namespace Livraria_Api.Controllers

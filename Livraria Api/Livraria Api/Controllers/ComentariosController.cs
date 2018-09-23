@@ -1,10 +1,7 @@
-﻿using Livraria_Api.Models;
+﻿using LivrariaApiModel.Dtos;
 using LivrariaApiRepo;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
 
 namespace Livraria_Api.Controllers
@@ -12,36 +9,34 @@ namespace Livraria_Api.Controllers
     public class ComentariosController : ApiController
     {
         // GET: api/Comentarios
-        public IEnumerable<Comentario> Get()
+        public IEnumerable<ComentarioDto> Get()
         {
-            return ComentarioRepositorio.Comentarios;
+            return ComentarioRepositorio.GerarDto(ComentarioRepositorio.Comentarios);
         }
 
         // GET: api/Comentarios/5
-        public Comentario Get(int id)
+        public ComentarioDto Get(int id)
         {
-            return ComentarioRepositorio.Comentarios.FirstOrDefault(c => c.Id == id);
+            return ComentarioRepositorio.GerarDto(ComentarioRepositorio.ObterPeloId(id));
         }
 
         // POST: api/Comentarios
-        public void Post([FromBody]Comentario comentario)
+        public void Post([FromBody]ComentarioDto comentario)
         {
-            comentario.Id = ComentarioRepositorio.Comentarios.Count == 0 ? 1 : ComentarioRepositorio.Comentarios.Max(c=> c.Id) + 1;
-            ComentarioRepositorio.Comentarios.Add(comentario);
+            ComentarioRepositorio.InserirNovoItem(comentario);
         }
 
         // PUT: api/Comentarios/5
-        public void Put(int id, [FromBody]Comentario comentario)
+        public void Put(int id, [FromBody]ComentarioDto comentario)
         {
-            var comentarioExistente = ComentarioRepositorio.Comentarios.FirstOrDefault(c => c.Id == id);
+            var comentarioExistente = ComentarioRepositorio.ObterPeloId(id);
             if(comentarioExistente == null)
             {
                 comentario.Id = id;
-                ComentarioRepositorio.Comentarios.Add(comentario);
+                ComentarioRepositorio.InserirNovoItem(comentario);
             } else
             {
-                comentarioExistente.IdUsuario = comentario.IdUsuario;
-                comentarioExistente.Conteudo = comentario.Conteudo;
+                // TODO
             }
         }
 

@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>LivrariaApiModel</RootNamespace>
     <AssemblyName>LivrariaApiModel</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -20,6 +21,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <LangVersion>7.1</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -40,16 +42,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Autor.cs" />
-    <Compile Include="Comentario.cs" />
+    <Compile Include="Dtos\AutorDto.cs" />
+    <Compile Include="Dtos\DtoBase.cs" />
+    <Compile Include="Dtos\EditoraDto.cs" />
+    <Compile Include="Dtos\LivroDto.cs" />
+    <Compile Include="Dtos\PedidoDto.cs" />
+    <Compile Include="Dtos\UsuarioDto.cs" />
+    <Compile Include="Entidades\Autor.cs" />
+    <Compile Include="Entidades\Comentario.cs" />
     <Compile Include="Dtos\ComentarioDto.cs" />
-    <Compile Include="Livro.cs" />
-    <Compile Include="Pedido.cs" />
+    <Compile Include="Entidades\Editora.cs" />
+    <Compile Include="Entidades\EntidadeBase.cs" />
+    <Compile Include="Entidades\Livro.cs" />
+    <Compile Include="Entidades\Pedido.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Usuario.cs" />
+    <Compile Include="Entidades\Usuario.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Entidades\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
