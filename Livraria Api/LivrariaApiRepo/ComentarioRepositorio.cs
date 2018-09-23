@@ -6,7 +6,26 @@ namespace LivrariaApiRepo
 {
     public class ComentarioRepositorio : RepositorioBase
     {
-        public static List<Comentario> Comentarios = new List<Comentario>();
+        public static List<Comentario> Comentarios = new List<Comentario>(new Comentario[] {
+                                                            new Comentario{
+                                                                Id = 1,
+                                                                IdLivro = 1,
+                                                                IdUsuario = 1,
+                                                                Conteudo = "Comentario 1"
+                                                            },
+                                                            new Comentario{
+                                                                Id = 2,
+                                                                IdLivro = 1,
+                                                                IdUsuario = 2,
+                                                                Conteudo = "Comentario 2"
+                                                            },
+                                                            new Comentario{
+                                                                Id = 3,
+                                                                IdLivro = 2,
+                                                                IdUsuario = 1,
+                                                                Conteudo = "Comentario 3"
+                                                            }
+        });
 
         public static Comentario ObterPeloId(int id)
         {

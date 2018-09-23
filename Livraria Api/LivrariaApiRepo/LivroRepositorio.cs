@@ -6,7 +6,18 @@ namespace LivrariaApiRepo
 {
     public class LivroRepositorio : RepositorioBase
     {
-        public static List<Livro> Livros = new List<Livro>();
+        public static List<Livro> Livros = new List<Livro>(new Livro[] {
+                                                            new Livro{
+                                                                Id = 1,
+                                                                Titulo = "Livro 1",
+                                                                EditoraId = 1
+                                                            },
+                                                            new Livro{
+                                                                Id = 2,
+                                                                Titulo = "Livro 2",
+                                                                EditoraId = 1
+                                                            }
+        });
 
         public static List<Livro> Listar()
         {

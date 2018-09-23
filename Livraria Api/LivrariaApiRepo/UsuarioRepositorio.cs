@@ -10,7 +10,16 @@ namespace LivrariaApiRepo
 {
     public class UsuarioRepositorio
     {
-        public static List<Usuario> Usuarios = new List<Usuario>();
+        public static List<Usuario> Usuarios = new List<Usuario>(new Usuario[] {
+                                                            new Usuario{
+                                                                Id = 1,
+                                                                Nome = "Usuario 1"
+                                                            },
+                                                            new Usuario{
+                                                                Id = 2,
+                                                                Nome = "Usuario 2"
+                                                            }
+        });
 
         public static Usuario ObterPeloId(int id)
         {
