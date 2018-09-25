@@ -10,22 +10,26 @@ namespace LivrariaApiRepo
                                                             new Livro{
                                                                 Id = 1,
                                                                 Titulo = "Harry Potter e a Pedra Filosofal",
-                                                                EditoraId = 1
+                                                                EditoraId = 1,
+                                                                AutorId = 1
                                                             },
                                                             new Livro{
                                                                 Id = 2,
                                                                 Titulo = "Harry Potter e a Câmara Secreta",
-                                                                EditoraId = 1
+                                                                EditoraId = 1,
+                                                                AutorId = 1
                                                             },
                                                             new Livro{
                                                                 Id = 3,
                                                                 Titulo = "O Senhor dos Anéis",
-                                                                EditoraId = 2
+                                                                EditoraId = 2,
+                                                                AutorId = 2
                                                             },
                                                             new Livro{
                                                                 Id = 4,
                                                                 Titulo = "O Silmarillion",
-                                                                EditoraId = 2
+                                                                EditoraId = 2,
+                                                                AutorId = 2
                                                             }
         });
 
@@ -67,7 +71,8 @@ namespace LivrariaApiRepo
                 {
                     Id = livro.Id,
                     EditoraId = livro.EditoraId,
-                    Titulo = livro.Titulo
+                    Titulo = livro.Titulo,
+                    AutorId = livro.AutorId
                 });
             }
             return livrosDto;
