@@ -10,12 +10,12 @@ namespace LivrariaApiRepo
         public static List<Pedido> Pedidos = new List<Pedido>(new Pedido[] {
                                                             new Pedido{
                                                                 Id = 1,
-                                                                IdsLivros = {1,2},
+                                                                IdsLivros = new List<int>(new int[]{1,2}),
                                                                 IdUsuario = 1
                                                             },
                                                             new Pedido{
                                                                 Id = 2,
-                                                                IdsLivros = {3,4},
+                                                                IdsLivros = new List<int>(new int[]{3,4}),
                                                                 IdUsuario = 1
                                                             }
         });

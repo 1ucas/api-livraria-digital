@@ -14,7 +14,7 @@ namespace Livraria_Api.Controllers
         // GET: api/Pedidos
         public IEnumerable<PedidoDto> Get()
         {
-            var pedidos = PedidoRepositorio.Listar();
+            var pedidos = PedidoRepositorio.Listar(); 
             return PedidoRepositorio.GerarDto(pedidos);
         }
 
