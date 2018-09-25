@@ -15,7 +15,7 @@ namespace LivrariaApiRepo
                                                             },
                                                             new Pedido{
                                                                 Id = 2,
-                                                                IdsLivros = {3,4 },
+                                                                IdsLivros = {3,4},
                                                                 IdUsuario = 1
                                                             }
         });
