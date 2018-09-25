@@ -9,13 +9,23 @@ namespace LivrariaApiRepo
         public static List<Livro> Livros = new List<Livro>(new Livro[] {
                                                             new Livro{
                                                                 Id = 1,
-                                                                Titulo = "Livro 1",
+                                                                Titulo = "Harry Potter e a Pedra Filosofal",
                                                                 EditoraId = 1
                                                             },
                                                             new Livro{
                                                                 Id = 2,
-                                                                Titulo = "Livro 2",
+                                                                Titulo = "Harry Potter e a Câmara Secreta",
                                                                 EditoraId = 1
+                                                            },
+                                                            new Livro{
+                                                                Id = 3,
+                                                                Titulo = "O Senhor dos Anéis",
+                                                                EditoraId = 2
+                                                            },
+                                                            new Livro{
+                                                                Id = 4,
+                                                                Titulo = "O Silmarillion",
+                                                                EditoraId = 2
                                                             }
         });
 

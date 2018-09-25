@@ -3,36 +3,55 @@ using LivrariaApiRepo;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
+using System.Net;
+using System.Net.Http;
+using System.Web.Http;
 
 namespace Livraria_Api.Controllers
 {
     public class EditorasController : ApiController
     {
         // GET api/<controller>
-        public IEnumerable<string> Get()
+        public IEnumerable<EditoraDto> Get()
         {
-            return new string[] { "value1", "value2" };
+            return EditoraRepositorio.GerarDto(EditoraRepositorio.Listar());
         }
 
         // GET api/<controller>/5
-        public string Get(int id)
+        public HttpResponseMessage Get(int id)
         {
-            return "value";
+            var editora = EditoraRepositorio.ObterPeloId(id);
+            if (editora == null) return new HttpResponseMessage(HttpStatusCode.NotFound);
+            return Request.CreateResponse(HttpStatusCode.OK,
+                EditoraRepositorio.GerarDto(EditoraRepositorio.ObterPeloId(id)));
         }
 
         // POST api/<controller>
-        public void Post([FromBody]string value)
+        public void Post([FromBody]EditoraDto editora)
         {
+            EditoraRepositorio.InserirNovoItem(editora);
         }
 
         // PUT api/<controller>/5
-        public void Put(int id, [FromBody]string value)
+        public void Put(int id, [FromBody]EditoraDto editora)
         {
+            var editoraExistente = EditoraRepositorio.ObterPeloId(id);
+            if (editoraExistente == null)
+            {
+                editora.Id = id;
+                EditoraRepositorio.InserirNovoItem(editora);
+            }
+            else
+            {
+                editoraExistente.Nome = editora.Nome;
+            }
         }
 
         // DELETE api/<controller>/5
         public void Delete(int id)
         {
+            var editoraExistente = EditoraRepositorio.Editoras.FirstOrDefault(c => c.Id == id);
+            EditoraRepositorio.Editoras.Remove(editoraExistente);
         }
     }
 }

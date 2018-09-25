@@ -42,8 +42,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AutorRepositorio.cs" />
     <Compile Include="ComentarioRepositorio.cs" />
+    <Compile Include="EditoraRepositorio.cs" />
     <Compile Include="LivroRepositorio.cs" />
+    <Compile Include="PedidoRepositorio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RepositorioBase.cs" />
     <Compile Include="UsuarioRepositorio.cs" />

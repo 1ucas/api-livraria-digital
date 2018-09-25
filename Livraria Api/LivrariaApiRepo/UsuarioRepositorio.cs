@@ -20,10 +20,23 @@ namespace LivrariaApiRepo
                                                                 Nome = "Usuario 2"
                                                             }
         });
+        public static List<Usuario> Listar()
+        {
+            return Usuarios;
+        }
 
         public static Usuario ObterPeloId(int id)
         {
             return RepositorioBase.ObterPeloId<Usuario>(Usuarios, id);
+        }
+
+        public static int InserirNovoItem(UsuarioDto novaUsuarioDto)
+        {
+            var usuario = new Usuario
+            {
+                Nome = novaUsuarioDto.Nome
+            };
+            return RepositorioBase.InserirNovoItem<Usuario>(Usuarios, usuario);
         }
 
         public static UsuarioDto GerarDto(Usuario usuario)
@@ -33,6 +46,20 @@ namespace LivrariaApiRepo
                 Id = usuario.Id,
                 Nome = usuario.Nome
             };
+        }
+
+        public static List<UsuarioDto> GerarDto(List<Usuario> usuarios)
+        {
+            var usuariosDto = new List<UsuarioDto>();
+            foreach (var usuario in usuarios)
+            {
+                usuariosDto.Add(new UsuarioDto
+                {
+                    Id = usuario.Id,
+                    Nome = usuario.Nome
+                });
+            }
+            return usuariosDto;
         }
     }
 }
