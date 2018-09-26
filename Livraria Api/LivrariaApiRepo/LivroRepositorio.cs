@@ -1,5 +1,6 @@
 ﻿using LivrariaApiModel.Dtos;
 using LivrariaApiModel.Entidades;
+using System;
 using System.Collections.Generic;
 
 namespace LivrariaApiRepo
@@ -11,25 +12,29 @@ namespace LivrariaApiRepo
                                                                 Id = 1,
                                                                 Titulo = "Harry Potter e a Pedra Filosofal",
                                                                 EditoraId = 1,
-                                                                AutorId = 1
+                                                                AutorId = 1,
+                                                                DataPublicacao = DateTime.Now
                                                             },
                                                             new Livro{
                                                                 Id = 2,
                                                                 Titulo = "Harry Potter e a Câmara Secreta",
                                                                 EditoraId = 1,
-                                                                AutorId = 1
+                                                                AutorId = 1,
+                                                                DataPublicacao = DateTime.Now
                                                             },
                                                             new Livro{
                                                                 Id = 3,
                                                                 Titulo = "O Senhor dos Anéis",
                                                                 EditoraId = 2,
-                                                                AutorId = 2
+                                                                AutorId = 2,
+                                                                DataPublicacao = DateTime.Now
                                                             },
                                                             new Livro{
                                                                 Id = 4,
                                                                 Titulo = "O Silmarillion",
                                                                 EditoraId = 2,
-                                                                AutorId = 2
+                                                                AutorId = 2,
+                                                                DataPublicacao = DateTime.Now
                                                             }
         });
 
@@ -72,8 +77,9 @@ namespace LivrariaApiRepo
                     Id = livro.Id,
                     EditoraId = livro.EditoraId,
                     Titulo = livro.Titulo,
-                    AutorId = livro.AutorId
-                });
+                    AutorId = livro.AutorId,
+                    DataPublicacao = livro.DataPublicacao.ToString("yyyy-MM-ddTHH\\:mm\\:ss.fffffffzzz")
+            });
             }
             return livrosDto;
         }
