@@ -9,9 +9,14 @@ namespace Livraria_Api.Controllers
     public class ComentariosController : ApiController
     {
         // GET: api/Comentarios
-        public IEnumerable<ComentarioDto> Get()
+        public IEnumerable<ComentarioDto> Get(int pagina, int itensPorPagina)
         {
-            return ComentarioRepositorio.GerarDto(ComentarioRepositorio.Comentarios);
+            var comentarios = ComentarioRepositorio.Listar(pagina, itensPorPagina);
+            if(comentarios == null)
+            {
+                return new List<ComentarioDto>();
+            }
+            return ComentarioRepositorio.GerarDto(comentarios);
         }
 
         // GET: api/Comentarios/5

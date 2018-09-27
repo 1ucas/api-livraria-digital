@@ -1,6 +1,7 @@
 ﻿using LivrariaApiModel.Dtos;
 using LivrariaApiModel.Entidades;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace LivrariaApiRepo
 {
@@ -24,8 +25,47 @@ namespace LivrariaApiRepo
                                                                 IdLivro = 2,
                                                                 IdUsuario = 1,
                                                                 Conteudo = "Comentario 3"
+                                                            },
+                                                            new Comentario{
+                                                                Id = 4,
+                                                                IdLivro = 1,
+                                                                IdUsuario = 1,
+                                                                Conteudo = "Comentario 4"
+                                                            },
+                                                            new Comentario{
+                                                                Id = 5,
+                                                                IdLivro = 1,
+                                                                IdUsuario = 1,
+                                                                Conteudo = "Comentario 5"
+                                                            },
+                                                            new Comentario{
+                                                                Id = 6,
+                                                                IdLivro = 2,
+                                                                IdUsuario = 1,
+                                                                Conteudo = "Comentario 6"
+                                                            },
+                                                            new Comentario{
+                                                                Id = 7,
+                                                                IdLivro = 2,
+                                                                IdUsuario = 1,
+                                                                Conteudo = "Comentario 7"
+                                                            },
+                                                            new Comentario{
+                                                                Id = 8,
+                                                                IdLivro = 2,
+                                                                IdUsuario = 1,
+                                                                Conteudo = "Comentario 8"
                                                             }
         });
+
+        public static List<Comentario> Listar(int pagina, int itensPorPagina)
+        {
+            if(pagina < 1 || itensPorPagina < 1 || pagina * itensPorPagina > Comentarios.Count)
+            {
+                return null;
+            }
+            return Comentarios.Where(c => c != null).Skip((pagina-1) * itensPorPagina).Take(itensPorPagina).ToList();
+        }
 
         public static Comentario ObterPeloId(int id)
         {
