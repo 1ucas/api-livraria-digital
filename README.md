@@ -35,7 +35,7 @@ Ainda no contexto do exercício não foi necessário a publicação da aplicaç�
 A API construída está preparada para versionamento e a rota atual é a V1
 
 ### 10. Estabeleça paginação para coleções com grandes volumes de dados.
-Como o número de entidades instanciadas inicialmente era pequena, não houve necessidade de implementar paginação.
+Como o número de entidades instanciadas inicialmente era pequena, não houve necessidade de implementar paginação. Porém, apenas para exemplificar, foi implementada a paginação na listagem (GET) de comentários quando um Id não é informado.
 
 ### 11. Use corretamente os códigos de retorno HTTP.
 Foram observados os códigos de retorno HTTP assim como consta na descrição do mesmo. Esse padrão pode ser observado ao buscar o recurso de Autor pelo Id. Inicialmente, tem-se apenas dois autores cadastrados (id = 1 e id = 2). Buscando autores por esses Ids, o sistema retorna com o código de sucesso (200). Buscando autores por códigos não existentes (ex: id = 3), a API retorna uma mensagem HTTP com o código = 404 (não encontrado).
