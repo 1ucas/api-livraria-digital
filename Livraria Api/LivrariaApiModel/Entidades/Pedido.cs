@@ -8,7 +8,7 @@ namespace LivrariaApiModel.Entidades
         public List<int> IdsLivros { get; set; }
         public float Valor { get; set; }
         public int IdUsuario { get; set; }
-        public 
+        public StatusPedido Status { get; set; }
     }
 
     public enum StatusPedido
