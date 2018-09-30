@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LivrariaApiRepo", "Livraria
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LivrariaApiModel", "LivrariaApiModel\LivrariaApiModel.csproj", "{DE8553AC-84B6-498F-9D90-FBA01BB753AC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LivrariaApiTest", "LivrariaApiTest\LivrariaApiTest.csproj", "{103A7034-81B9-466F-9D51-3FE67900DBF5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LivrariaApiServices", "LivrariaApiIntegracoes\LivrariaApiServices.csproj", "{0C821FB0-EE32-4BA2-A0CE-60E287AACC86}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{DE8553AC-84B6-498F-9D90-FBA01BB753AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DE8553AC-84B6-498F-9D90-FBA01BB753AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DE8553AC-84B6-498F-9D90-FBA01BB753AC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{103A7034-81B9-466F-9D51-3FE67900DBF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{103A7034-81B9-466F-9D51-3FE67900DBF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{103A7034-81B9-466F-9D51-3FE67900DBF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{103A7034-81B9-466F-9D51-3FE67900DBF5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C821FB0-EE32-4BA2-A0CE-60E287AACC86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C821FB0-EE32-4BA2-A0CE-60E287AACC86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C821FB0-EE32-4BA2-A0CE-60E287AACC86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C821FB0-EE32-4BA2-A0CE-60E287AACC86}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

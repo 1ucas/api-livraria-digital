@@ -4,14 +4,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{DE8553AC-84B6-498F-9D90-FBA01BB753AC}</ProjectGuid>
+    <ProjectGuid>{0C821FB0-EE32-4BA2-A0CE-60E287AACC86}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>LivrariaApiModel</RootNamespace>
-    <AssemblyName>LivrariaApiModel</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <RootNamespace>LivrariaApiIntegracoes</RootNamespace>
+    <AssemblyName>LivrariaApiIntegracoes</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
+    <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -21,7 +21,6 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <LangVersion>7.1</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -32,6 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -42,24 +44,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Inputs\BaseInput.cs" />
-    <Compile Include="Outputs\BaseOutput.cs" />
-    <Compile Include="Dtos\AutorDto.cs" />
-    <Compile Include="Dtos\DtoBase.cs" />
-    <Compile Include="Dtos\EditoraDto.cs" />
-    <Compile Include="Dtos\LivroDto.cs" />
-    <Compile Include="Dtos\PedidoDto.cs" />
-    <Compile Include="Dtos\UsuarioDto.cs" />
-    <Compile Include="Entidades\Autor.cs" />
-    <Compile Include="Entidades\Comentario.cs" />
-    <Compile Include="Dtos\ComentarioDto.cs" />
-    <Compile Include="Entidades\Editora.cs" />
-    <Compile Include="Entidades\EntidadeBase.cs" />
-    <Compile Include="Entidades\Livro.cs" />
-    <Compile Include="Entidades\Pedido.cs" />
+    <Compile Include="AuditoriaService.cs" />
+    <Compile Include="AutenticacaoService.cs" />
+    <Compile Include="BaseService.cs" />
+    <Compile Include="PagamentoService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Entidades\Usuario.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\LivrariaApiModel\LivrariaApiModel.csproj">
+      <Project>{DE8553AC-84B6-498F-9D90-FBA01BB753AC}</Project>
+      <Name>LivrariaApiModel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
