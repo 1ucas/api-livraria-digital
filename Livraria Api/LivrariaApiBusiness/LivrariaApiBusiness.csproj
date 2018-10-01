@@ -44,6 +44,8 @@
   <ItemGroup>
     <Compile Include="AutoresBusiness.cs" />
     <Compile Include="ComentarioBusiness.cs" />
+    <Compile Include="EditoraBusiness.cs" />
+    <Compile Include="LivroBusiness.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

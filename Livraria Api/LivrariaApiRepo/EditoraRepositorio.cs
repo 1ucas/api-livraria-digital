@@ -20,6 +20,7 @@ namespace LivrariaApiRepo
                                                                 Nome = "Moderna"
                                                             }
         });
+
         public static List<Editora> Listar()
         {
             return Editoras;
