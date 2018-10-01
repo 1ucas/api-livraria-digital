@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web.Http;
 using System.Net;
 using System.Net.Http;
+using LivrariaApiBusiness;
 
 namespace Livraria_Api.Controllers
 {
@@ -19,38 +20,27 @@ namespace Livraria_Api.Controllers
         // GET: api/Autores/5
         public HttpResponseMessage Get( int id)
         {
-            var autor = AutorRepositorio.ObterPeloId(id);
+            var autor = new AutoresBusiness().ObterPeloId(id);
             if (autor == null) return new HttpResponseMessage(HttpStatusCode.NotFound);
-            return Request.CreateResponse(HttpStatusCode.OK,
-                AutorRepositorio.GerarDto(AutorRepositorio.ObterPeloId(id)));
+            return Request.CreateResponse(HttpStatusCode.OK, autor);
         }
 
         // POST: api/Autores
         public void Post([FromBody]AutorDto autor)
         {
-            AutorRepositorio.InserirNovoItem(autor);
+            new AutoresBusiness().Criar(autor);
         }
 
         // PUT: api/Autores/5
         public void Put(int id, [FromBody]AutorDto autor)
         {
-            var autorExistente = AutorRepositorio.ObterPeloId(id);
-            if (autorExistente == null)
-            {
-                autor.Id = id;
-                AutorRepositorio.InserirNovoItem(autor);
-            }
-            else
-            {
-                autorExistente.Nome = autor.Nome;
-            }
+            new AutoresBusiness().Inserir(id, autor);
         }
 
         // DELETE: api/Autores/5
         public void Delete(int id)
         {
-            var autorExistente = AutorRepositorio.Autores.FirstOrDefault(c => c.Id == id);
-            AutorRepositorio.Autores.Remove(autorExistente);
+            new AutoresBusiness().Remover(id);
         }
     }
 }

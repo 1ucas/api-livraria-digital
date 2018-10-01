@@ -123,6 +123,10 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\LivrariaApiBusiness\LivrariaApiBusiness.csproj">
+      <Project>{a081b02b-82e2-46f4-8e31-e7356249ce28}</Project>
+      <Name>LivrariaApiBusiness</Name>
+    </ProjectReference>
     <ProjectReference Include="..\LivrariaApiModel\LivrariaApiModel.csproj">
       <Project>{DE8553AC-84B6-498F-9D90-FBA01BB753AC}</Project>
       <Name>LivrariaApiModel</Name>
