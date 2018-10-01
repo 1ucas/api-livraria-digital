@@ -1,4 +1,5 @@
 ﻿
+using LivrariaApiModel.Entidades;
 using System.Collections.Generic;
 
 namespace LivrariaApiModel.Dtos
@@ -8,5 +9,6 @@ namespace LivrariaApiModel.Dtos
         public List<LivroDto> Livros { get; set; }
         public float Valor { get; set; }
         public UsuarioDto Usuario { get; set; }
+        public StatusPedido Status { get; set; }
     }
 }

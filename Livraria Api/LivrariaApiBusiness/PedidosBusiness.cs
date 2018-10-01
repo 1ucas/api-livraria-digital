@@ -38,6 +38,7 @@ namespace LivrariaApiBusiness
                 pedidoExistente.IdUsuario = pedido.Usuario.Id;
                 pedidoExistente.Valor = pedido.Valor;
                 pedidoExistente.IdsLivros = pedido.Livros.Select(l => l.Id).ToList();
+                pedidoExistente.Status = pedido.Status;
                 return id;
             } 
         }
