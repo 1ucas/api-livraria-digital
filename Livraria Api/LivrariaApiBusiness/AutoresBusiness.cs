@@ -14,7 +14,7 @@ namespace LivrariaApiBusiness
 
         public AutorDto ObterPeloId(int id)
         {
-            return AutorRepositorio.GerarDto(AutorRepositorio.ObterPeloId(id)));
+            return AutorRepositorio.GerarDto(AutorRepositorio.ObterPeloId(id));
         }
 
         public int Criar(AutorDto autor)

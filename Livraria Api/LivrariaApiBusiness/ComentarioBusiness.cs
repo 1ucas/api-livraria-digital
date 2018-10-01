@@ -22,7 +22,7 @@ namespace LivrariaApiBusiness
 
         public ComentarioDto ObterPeloId(int id)
         {
-            return ComentarioRepositorio.GerarDto(ComentarioRepositorio.ObterPeloId(id)));
+            return ComentarioRepositorio.GerarDto(ComentarioRepositorio.ObterPeloId(id));
         }
 
         public int Criar(ComentarioDto Comentario)
