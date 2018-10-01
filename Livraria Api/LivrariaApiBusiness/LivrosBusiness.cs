@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace LivrariaApiBusiness
 {
-    public class LivroBusiness
+    public class LivrosBusiness
     {
         public List<LivroDto> Listar()
         {

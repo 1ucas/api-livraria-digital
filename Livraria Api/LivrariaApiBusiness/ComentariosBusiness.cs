@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace LivrariaApiBusiness
 {
-    public class ComentarioBusiness
+    public class ComentariosBusiness
     {
         public List<ComentarioDto> Listar(int pagina, int itensPorPagina)
         {
