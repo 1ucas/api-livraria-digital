@@ -1,4 +1,5 @@
-﻿using LivrariaApiModel.Dtos;
+﻿using LivrariaApiBusiness;
+using LivrariaApiModel.Dtos;
 using LivrariaApiRepo;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,14 +16,10 @@ namespace Livraria_Api.Controllers
         [Route("")]
         public HttpResponseMessage Get(int id = 0, string titulo = null, int autor = 0, int editora = 0)
         {
-            var livrosFiltrados = LivroRepositorio.Listar().Where(l => (id == 0 ? true : l.Id == id) &&
-                                                            (editora == 0 ? true : l.EditoraId == editora) &&
-                                                                (autor == 0 ? true : l.AutorId == autor) && 
-                                                                    (titulo == null ? true : l.Titulo.Contains(titulo))).ToList();
-            if(livrosFiltrados.Any())
+            var livrosFiltrados = new LivrosBusiness().Filtrar(id, titulo, autor, editora);
+            if (livrosFiltrados != null)
             {
-                return Request.CreateResponse(HttpStatusCode.OK,
-                LivroRepositorio.GerarDto(livrosFiltrados));
+                return Request.CreateResponse(HttpStatusCode.OK, livrosFiltrados);
             }
             return Request.CreateResponse(HttpStatusCode.NotFound);
 
@@ -31,17 +28,19 @@ namespace Livraria_Api.Controllers
         // POST: api/Livros
         public void Post([FromBody]LivroDto livro)
         {
-            LivroRepositorio.InserirNovoItem(livro);
+            new LivrosBusiness().Criar(livro);
         }
 
         // PUT: api/Livros/5
         public void Put(int id, [FromBody]LivroDto livro)
         {
+            new LivrosBusiness().Inserir(id, livro);
         }
 
         // DELETE: api/Livros/5
         public void Delete(int id)
         {
+            new LivrosBusiness().Remover(id);
         }
     }
 }
