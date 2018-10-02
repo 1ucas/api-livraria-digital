@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace LivrariaApiIntegracoes
+﻿
+namespace LivrariaApiServices
 {
-    class PagamentoService
+    public class PagamentoService : BaseService
     {
+        public PagamentoService(string authToken) : base(authToken)
+        {
+            BaseRoute = "";
+        }
     }
 }

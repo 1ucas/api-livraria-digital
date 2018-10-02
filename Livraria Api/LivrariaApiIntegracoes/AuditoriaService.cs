@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace LivrariaApiIntegracoes
+namespace LivrariaApiServices
 {
-    class AuditoriaService
+    public class AuditoriaService : BaseService
     {
+        public AuditoriaService(string authToken) : base(authToken)
+        {
+            BaseRoute = "";
+        }
     }
 }

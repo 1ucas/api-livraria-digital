@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace LivrariaApiServices
 {
-    public class AutenticacaoService
+    public class AutenticacaoService : BaseService
     {
+        public AutenticacaoService(string authToken) : base(authToken)
+        {
+            BaseRoute = "https://apilivrariaauth20181002115700.azurewebsites.net/";
+        }
     }
 }
