@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web.Http;
 using System.Net;
 using System.Net.Http;
+using LivrariaApiBusiness;
 
 namespace Livraria_Api.Controllers
 {
@@ -29,7 +30,7 @@ namespace Livraria_Api.Controllers
         // POST: api/Pedidos
         public void Post([FromBody]PedidoDto pedido)
         {
-            PedidoRepositorio.InserirNovoItem(pedido);
+            new PedidosBusiness().Criar(pedido);
         }
 
         // PUT: api/Pedidos/5

@@ -32,6 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -42,7 +45,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dtos\CartaoCreditoDto.cs" />
+    <Compile Include="Inputs\AuditoriaInput.cs" />
+    <Compile Include="Inputs\AutenticacaoInput.cs" />
     <Compile Include="Inputs\BaseInput.cs" />
+    <Compile Include="Inputs\PagamentoInput.cs" />
+    <Compile Include="Outputs\AuditoriaOutput.cs" />
+    <Compile Include="Outputs\AutenticacaoOutput.cs" />
     <Compile Include="Outputs\BaseOutput.cs" />
     <Compile Include="Dtos\AutorDto.cs" />
     <Compile Include="Dtos\DtoBase.cs" />
@@ -57,9 +66,12 @@
     <Compile Include="Entidades\EntidadeBase.cs" />
     <Compile Include="Entidades\Livro.cs" />
     <Compile Include="Entidades\Pedido.cs" />
+    <Compile Include="Outputs\PagamentoOutput.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Entidades\Usuario.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

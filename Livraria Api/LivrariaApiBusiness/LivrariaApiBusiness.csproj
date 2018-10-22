@@ -48,8 +48,13 @@
     <Compile Include="LivrosBusiness.cs" />
     <Compile Include="PedidosBusiness.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UsuarioBusiness.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\LivrariaApiIntegracoes\LivrariaApiServices.csproj">
+      <Project>{0c821fb0-ee32-4ba2-a0ce-60e287aacc86}</Project>
+      <Name>LivrariaApiServices</Name>
+    </ProjectReference>
     <ProjectReference Include="..\LivrariaApiModel\LivrariaApiModel.csproj">
       <Project>{DE8553AC-84B6-498F-9D90-FBA01BB753AC}</Project>
       <Name>LivrariaApiModel</Name>

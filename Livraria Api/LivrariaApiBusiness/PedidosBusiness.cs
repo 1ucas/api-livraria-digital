@@ -1,5 +1,6 @@
 ﻿using LivrariaApiModel.Dtos;
 using LivrariaApiRepo;
+using LivrariaApiServices;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,7 +23,15 @@ namespace LivrariaApiBusiness
 
         public int Criar(PedidoDto pedido)
         {
-            return PedidoRepositorio.InserirNovoItem(pedido);
+            var respostaPagamento = new PagamentoService("").Pagar(pedido.Usuario.Id, pedido.Cartao, pedido.Livros.FirstOrDefault().Id);
+            if(respostaPagamento == false)
+            {
+                throw new Exception("Erro ao processar pagamento");
+            } else
+            {
+
+                return PedidoRepositorio.InserirNovoItem(pedido);
+            }
         }
 
         public int Inserir(int id, PedidoDto pedido)
