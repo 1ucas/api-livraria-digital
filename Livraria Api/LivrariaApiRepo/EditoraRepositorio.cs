@@ -42,6 +42,10 @@ namespace LivrariaApiRepo
 
         public static EditoraDto GerarDto(Editora editora)
         {
+            if(editora == null)
+            {
+                return null;
+            }
             return new EditoraDto
             {
                 Id = editora.Id,

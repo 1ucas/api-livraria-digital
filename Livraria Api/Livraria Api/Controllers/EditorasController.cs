@@ -20,7 +20,9 @@ namespace Livraria_Api.Controllers
         // GET api/<controller>/5
         public HttpResponseMessage Get(int id)
         {
-            return new EditorasBusiness().ObterPeloId(id);
+            var editoraDto = new EditorasBusiness().ObterPeloId(id);
+            if (editoraDto == null) return new HttpResponseMessage(HttpStatusCode.NotFound);
+            return Request.CreateResponse(HttpStatusCode.OK, editoraDto);
         }
 
         // POST api/<controller>

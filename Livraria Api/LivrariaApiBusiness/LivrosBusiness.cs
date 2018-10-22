@@ -10,14 +10,18 @@ namespace LivrariaApiBusiness
 {
     public class LivrosBusiness
     {
-        public List<LivroDto> Listar()
+        public List<LivroDto> Filtrar(int id = 0, string titulo = null, int autor = 0, int editora = 0)
         {
-            var Livros = LivroRepositorio.Listar();
-            if (Livros == null)
+            var livrosFiltrados = LivroRepositorio.Listar().Where(l => (id == 0 ? true : l.Id == id) &&
+                                                            (editora == 0 ? true : l.EditoraId == editora) &&
+                                                                (autor == 0 ? true : l.AutorId == autor) &&
+                                                                    (titulo == null ? true : l.Titulo.Contains(titulo))).ToList();
+            if (livrosFiltrados.Any())
             {
-                return new List<LivroDto>();
+                return LivroRepositorio.GerarDto(livrosFiltrados);
+
             }
-            return LivroRepositorio.GerarDto(Livros);
+            return null;
         }
 
         public LivroDto ObterPeloId(int id)

@@ -9,36 +9,17 @@ using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LivrariaApiIntegracoes
+namespace LivrariaApiServices
 {
     public abstract class BaseService
     {
-        private string BaseURL
-        {
-            get
-            {
-                return "http://www.convitinhos.com/api";
-            }
-        }
-
-        private string BasePath
-        {
-            get
-            {
-                return string.IsNullOrEmpty(BaseRoute) ? BaseURL : BaseURL + BaseRoute;
-            }
-        }
-
         private string AuthToken { get; set; }
-
-        private string AppVersion { get; set; }
 
         private static HttpClient client = new HttpClient();
 
-        public BaseService(string authToken, string appVersion)
+        public BaseService(string authToken)
         {
             AuthToken = authToken;
-            AppVersion = appVersion;
         }
 
         public string BaseRoute { get; set; }
@@ -134,11 +115,10 @@ namespace LivrariaApiIntegracoes
         private void ConfigureClient(HttpClient client, string path)
         {
             client.Timeout = new TimeSpan(0, 0, 7);
-            client.BaseAddress = new Uri(BasePath + path);
+            client.BaseAddress = new Uri(BaseRoute + path);
             client.DefaultRequestHeaders.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             client.DefaultRequestHeaders.Add("X-User-Token", AuthToken);
-            client.DefaultRequestHeaders.Add("X-App-Version", AppVersion);
         }
 
         private enum MethodHttp
