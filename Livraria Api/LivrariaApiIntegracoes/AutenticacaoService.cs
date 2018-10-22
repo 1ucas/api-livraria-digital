@@ -9,7 +9,6 @@ namespace LivrariaApiServices
     {
         public AutenticacaoService(string authToken) : base(authToken)
         {
-            BaseRoute = "https://apilivrariaauth20181002115700.azurewebsites.net/";
         }
 
         public string Login(UsuarioDto usuario)

@@ -22,7 +22,12 @@ namespace LivrariaApiServices
             AuthToken = authToken;
         }
 
-        public string BaseRoute { get; set; }
+        public string BaseRoute {
+            get
+            {
+                return "https://spring-api-gateway.herokuapp.com/";
+            }
+        }
 
         public T Get<T>(string path, bool canRetry = true) where T : BaseOutput
         {

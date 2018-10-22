@@ -9,7 +9,6 @@ namespace LivrariaApiServices
     {
         public PagamentoService(string authToken) : base(authToken)
         {
-            BaseRoute = "http://ms-payment.herokuapp.com/v1/private/";
         }
 
         public bool Pagar(int usuarioId, CartaoCreditoDto cartao, int livroId)

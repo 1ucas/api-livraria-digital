@@ -10,7 +10,6 @@ namespace LivrariaApiServices
     {
         public AuditoriaService(string authToken) : base(authToken)
         {
-            BaseRoute = "https://auditoria20181002095244.azurewebsites.net/api/v1/";
         }
 
         public void Auditar(int clienteId, int livroId, int valor, string cartao)
